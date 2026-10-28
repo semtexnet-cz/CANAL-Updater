@@ -15,27 +15,27 @@ import urllib.request
 
 # Picony
 PICON_DIR = "/usr/share/enigma2/picon/"
-PLUGIN_DIR = "/usr/lib/enigma2/python/Plugins/Extensions/SkylinkCZUpdater/"
+PLUGIN_DIR = "/usr/lib/enigma2/python/Plugins/Extensions/CANALUpdater/"
 LOCAL_PICON_VERSION_FILE = os.path.join(PLUGIN_DIR, "version.txt")
-REMOTE_PICON_VERSION_URL = "https://raw.githubusercontent.com/semtexnet-cz/Skylink-CZ-Updater/main/version.txt"
-PICON_ZIP_URL = "https://raw.githubusercontent.com/semtexnet-cz/Skylink-CZ-Updater/main/picon/picon.zip"
+REMOTE_PICON_VERSION_URL = "https://raw.githubusercontent.com/semtexnet-cz/CANAL-Updater/main/version.txt"
+PICON_ZIP_URL = "https://raw.githubusercontent.com/semtexnet-cz/CANAL-Updater/main/picon/picon.zip"
 TMP_PICON_ZIP = "/tmp/picon.zip"
 
 # Bouquets (NOVÉ)
-BOUQUETS_ZIP_URL = "https://raw.githubusercontent.com/semtexnet-cz/Skylink-CZ-Updater/main/bouquets.zip"
+BOUQUETS_ZIP_URL = "https://raw.githubusercontent.com/semtexnet-cz/CANAL-Updater/main/bouquets.zip"
 TMP_BOUQUETS_ZIP = "/tmp/bouquets.zip"
 BOUQUETS_DIR = "/etc/enigma2/"
 
 # Plugin
 LOCAL_PLUGIN_VERSION_FILE = os.path.join(PLUGIN_DIR, "plugin_version.txt")
-REMOTE_PLUGIN_VERSION_URL = "https://raw.githubusercontent.com/semtexnet-cz/Skylink-CZ-Updater/main/plugin_version.txt"
-PLUGIN_ZIP_URL = "https://raw.githubusercontent.com/semtexnet-cz/Skylink-CZ-Updater/main/plugin.zip"
+REMOTE_PLUGIN_VERSION_URL = "https://raw.githubusercontent.com/semtexnet-cz/CANAL-Updater/main/plugin_version.txt"
+PLUGIN_ZIP_URL = "https://raw.githubusercontent.com/semtexnet-cz/CANAL-Updater/main/plugin.zip"
 TMP_PLUGIN_ZIP = "/tmp/plugin.zip"
 
 
 class PiconUpdater(Screen):
     skin = """
-    <screen name="PiconUpdater" position="center,center" size="600,450" title="Skylink CZ Updater">
+    <screen name="PiconUpdater" position="center,center" size="600,450" title="CANAL+ Updater">
         <widget name="status" position="20,20" size="560,50" font="Regular;22" halign="center" valign="center"/>
         <widget name="localver" position="20,100" size="560,40" font="Regular;20" halign="center"/>
         <widget name="remotever" position="20,150" size="560,40" font="Regular;20" halign="center"/>
@@ -249,8 +249,8 @@ def main(session, **kwargs):
 
 def Plugins(path, **kwargs):
     return [PluginDescriptor(
-        name="Skylink CZ Updater",
-        description="Aktualizace programů a picon pro Skylink CZ + SK (M7 Group)",
+        name="CANAL+ Updater",
+        description="Aktualizace fastscan programů a picon pro CANAL+",
         where=PluginDescriptor.WHERE_PLUGINMENU,
         icon="plugin.png",
         fnc=main
